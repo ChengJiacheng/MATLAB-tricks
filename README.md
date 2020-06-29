@@ -18,3 +18,20 @@ function y = softmax(x)
     y = y ./ (repmat(sum(y, 2), [1 size(x, 2)]));
 end
 ```
+
+## Figures
+### Prevent Type 3 Fonts
+The default font used by MATLAB figures is Helvetica, which is not allowed by some Journals/Conferences. My handling strategy is to use Times New Roman.
+```
+openfig('vis4.fig')
+xlabel('$\mathbf{x}(1)$', 'Interpreter', 'latex', 'FontSize', 16, 'FontName', 'Times New Roman')
+ylabel('$\mathbf{x}(2)$', 'Interpreter', 'latex', 'FontSize', 16, 'FontName', 'Times New Roman')
+
+set(gca, 'FontName', 'Times New Roman')
+
+hLegend = findobj(gcf, 'Type', 'Legend');
+set(hLegend, 'FontName', 'Times New Roman')
+saveas(gcf,'vis4','epsc')
+```
+
+
