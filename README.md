@@ -2,7 +2,8 @@
 ## Syntax
 
 ```
-(1/-2*sqrt(2)) != (1/(-2*sqrt(2)))
+(1/-2*sqrt(2))  % -0.7071
+(1/(-2*sqrt(2))) % -0.3536
 ```
 
 ## Numerical Stability
