@@ -36,3 +36,18 @@ saveas(gcf,'vis4','epsc')
 ```
 
 
+# Python-tricks
+## Check How Much Memory Is Being Used
+```
+import psutil, os
+print(u'当前进程的内存使用：%.4f GB' % (psutil.Process(os.getpid()).memory_info().rss/ 1024 / 1024 / 1024))
+```
+## Display GPU Information
+```
+from pynvml import *
+nvmlInit()
+deviceCount = nvmlDeviceGetCount() #几块显卡
+for i in range(deviceCount):
+    handle = nvmlDeviceGetHandleByIndex(i)
+    print ("Device", i, ":", nvmlDeviceGetName(handle)) #具体是什么显卡
+```
